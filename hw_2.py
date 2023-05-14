@@ -1,3 +1,5 @@
+import math
+
 class Figure:
     unit = 'cm'
 
@@ -11,9 +13,15 @@ class Figure:
 class Circle(Figure):
     def __init__(self, radius):
         self.__radius = radius
-
+    @property
+    def radius(self): 
+        return self.__radius
+    @radius.setter 
+    def radius(self, value): # Cеттер 2
+        self.__radius = value
+    
     def calculate_area(self):
-        return round(3.14 * self.__radius ** 2, 2)
+        return round(math.pi * self.__radius ** 2, 2)
 
     def info(self):
         print(f"Circle radius: {self.__radius}{self.unit}, area: {self.calculate_area()}{self.unit}")
@@ -33,7 +41,7 @@ class RightTriangle(Figure):
 
 
 nono1 = Circle(2)
-nono2 = Circle(3)
+nono2 = Circle(30)
 
 nene1 = RightTriangle(5, 8)
 nene2 = RightTriangle(3, 4)
