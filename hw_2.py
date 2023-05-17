@@ -17,11 +17,11 @@ class Circle(Figure):
     def radius(self): 
         return self.__radius
     @radius.setter 
-    def radius(self, value): # Cеттер 2
+    def radius(self, value): 
         self.__radius = value
     
     def calculate_area(self):
-        return round(math.pi * self.__radius ** 2, 2)
+        return round(math.pi * self.__radius ** 2, 1)
 
     def info(self):
         print(f"Circle radius: {self.__radius}{self.unit}, area: {self.calculate_area()}{self.unit}")
@@ -33,7 +33,7 @@ class RightTriangle(Figure):
         self.__side_b = side_b
 
     def calculate_area(self):
-        return round(0.5 * self.__side_a * self.__side_b, 2)
+        return round(0.5 * self.__side_a * self.__side_b,2)
 
     def info(self):
         print(f"RightTriangle side a: {self.__side_a}{self.unit}, side b: {self.__side_b}{self.unit}, "
