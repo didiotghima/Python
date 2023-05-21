@@ -67,9 +67,8 @@ class Berserk(Hero):
         super().__init__(name, health, damage, "Part Damage")
     
     def apply_super_power(self, boss: Boss, heroes: list):
-        coef = random.randint(0, 60)
-        boss.health -= boss.damage - coef
-        print(f"Warrior {self.name} hits Part Damage : {boss.damage - coef}\n")
+        boss.health -= boss.damage
+        print(f"Warrior {self.name} hits Part Damage : {boss.damage}\n")    
 
 class Hacker(Hero):
     def __init__(self, name, health, damage) -> None:
