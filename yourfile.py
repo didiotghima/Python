@@ -103,12 +103,12 @@ class Mag(Hero):
                 hero.damage += boost_point
 
 class Thor(Hero):
-    def __init__(self, name, health, damage, stun_chance) -> None:
-        super().__init__(name, health, damage, "STUN", stun_chance)
+    def __init__(self, name, health, damage) -> None:
+        super().__init__(name, health, damage, "STUN")
 
     def hit(self, boss: Boss):
         if boss.health > 0 and self.health > 0:
-            if random.randint() < self.stun_chance:
+            if random.randint(0, 20) < self.damage:
                 print(f"Thor оглушил босса {boss.name}!")
             else:
                 boss.health -= self.damage
